@@ -2,15 +2,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Approximation {
+public class Greedy {
 	public Item[] items;
 	public int capacity;
 	
-	public Approximation( Item[] its, int cap ) {
+	public Greedy( Item[] its, int cap ) {
 		this.capacity = cap;
 		items = its;
 		
-		Arrays.sort(items, new SortItemsApprox());
+		Arrays.sort(items, new SortItemsGreedy());
+		for (Item i : items) {
+			System.out.println("- " + i.str());
+		}
 	}
 	
 	public Backpack solve() {
@@ -27,10 +30,9 @@ public class Approximation {
 		return new Backpack(its, capacity);  
 	}
 
-	public static void launchApproximation(Item[] items, int cap) {
-	    Approximation knapsack = new Approximation(items, cap);
+	public static void launchGreed(Item[] items, int cap) {
+	    Greedy knapsack = new Greedy(items, cap);
 	    Backpack solution = knapsack.solve();
 	    solution.display();
 	}
 }
-

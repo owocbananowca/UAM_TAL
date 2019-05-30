@@ -60,16 +60,8 @@ public class DynamicProgramming {
 	    return new Backpack(itemsSolution, temp[noOfItems][capacity]);
 	  }
 
-	  public static void launchDynamicProg() {
-	    //Input items
-	    Item[] items = {new Item("Item1", 4, 12), 
-		                new Item("Item2", 2, 1), 
-						new Item("Item3", 2, 2), 
-						new Item("Item4", 1, 1),
-	                    new Item("Item5", 10, 4)
-	                   };
-
-	    DynamicProgramming knapsack = new DynamicProgramming(items, 15);
+	  public static void launchDynamicProg(Item[] items, int cap) {
+	    DynamicProgramming knapsack = new DynamicProgramming(items, cap);
 	    knapsack.display();
 	    Backpack solution = knapsack.solve();
 	    solution.display();
