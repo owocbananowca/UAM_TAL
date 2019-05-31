@@ -11,9 +11,9 @@ public class Greedy {
 		items = its;
 		
 		Arrays.sort(items, new SortItemsGreedy());
-		for (Item i : items) {
-			System.out.println("- " + i.str());
-		}
+		//for (Item i : items) {
+		//	System.out.println("- " + i.str());
+		//}
 	}
 	
 	public Backpack solve() {
